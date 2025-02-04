@@ -37,7 +37,8 @@ div.container {
     box-sizing: border-box;
     width:29%;
     height: 350px;
-    margin: 20px;
+    margin: 2%;
+    margin-top: 20px;
     background-color: rgb(208,204,208);
     overflow: hidden;
     float: left;
