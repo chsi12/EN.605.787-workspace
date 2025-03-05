@@ -22,12 +22,15 @@ function LunchCheckController ($scope) {
     //removes filters out empty entries
     var items = string.split(",").filter(isEmpty);
     
+    var color = "green";
     if(items.length > 3) {
         msg = "Too much!";
     } else if(items.length > 0) {
         msg = "Enjoy!";
+    } else {
+      color = "red";
     }
-    return ["green",msg];
+    return [color,msg];
   }
 
   function isEmpty (string) {
