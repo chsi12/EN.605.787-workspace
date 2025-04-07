@@ -15,8 +15,8 @@
         showList.buy = function (itemIndex) {
             ShoppingListCheckOffService.buyItem(itemIndex);
         }
-        
     }
+    
     function AlreadyBoughtController (ShoppingListCheckOffService) {
         var showList = this;
         showList.items =  ShoppingListCheckOffService.getBought();

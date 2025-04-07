@@ -1,0 +1,17 @@
+<fieldset>
+    <ol>
+        <li ng-repeat="item in foundItems">
+            <h4>({{item.short_name}}) {{ item.name }} 
+                <button class="rembtn" ng-click="onRemove({index: $index})">Remove</button></h4>
+            
+            <span> <p>
+                {{ item.description }}
+            </p> </span>
+            
+          </li>
+    </ol>
+    <div class="error" ng-if="!query">
+        <h4>Nothing Found</h4>
+    </div>
+</fieldset>
+
