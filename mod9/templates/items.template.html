@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Menu Items ({{$ctrl.category}})</h2>
+    <ul>
+      <li ng-repeat="item in $ctrl.items">
+        <fieldset>
+          <h4>{{ item.name }}</h4>
+          <hr>
+          <p>
+            {{ item.description }}
+          </p>
+        </fieldset>
+        
+      </li>
+    </ul>
+    <div class="error" ng-if="!$ctrl.items">
+      <h4>Nothing Found</h4>
+  </div>
+  </div>
+  
