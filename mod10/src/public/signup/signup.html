@@ -1,0 +1,35 @@
+<div class="container">
+    <form name="form" ng-submit="$ctrl.submit()" novalidate class="col-md-12">
+        <div class="col-md-12 form-row">
+            <label>First Name:</label>
+            <input type="text" name="firstName" ng-model="$ctrl.user.firstName" required />
+            <span class="form-req" 
+                ng-show="form.firstName.$touched && form.firstName.$invalid">Required</span>
+        </div>
+        <div class="col-md-12 form-row">
+            <label>Last Name:</label>
+            <input type="text" name="lastName" ng-model="$ctrl.user.lastName" required />
+            <span class="form-req" ng-show="form.lastName.$touched && form.lastName.$invalid">Required</span>  
+        </div>
+        <div class="col-md-12 form-row">
+            <label>Email:</label>
+            <input type="email" name="email" ng-model="$ctrl.user.email" required />
+            <span class="form-req" ng-show="form.email.$touched && form.email.$invalid">Must be a valid email</span>
+        </div>
+        <div class="col-md-12 form-row">
+            <label>Phone number:</label>
+            <input type="text" name="phone" ng-model="$ctrl.user.phone" 
+                pattern="(\d{3})-(\d{3})-(\d{4})" required />
+            <span class="form-req" ng-show="form.phone.$touched && form.phone.$invalid">Must be a valid phone number</span>
+        </div>
+        <div class="col-md-12 form-row">
+            <label>Favorite Menu Item (number):</label>
+            <input type="text" name="favorite" ng-model="$ctrl.user.favorite" validate-favorite-item required />
+           <span class="form-req" ng-show="form.favorite.$touched && form.favorite.$error.notfound">No such menu number exists.</span>
+        </div>
+        <div class="col-md-12 form-row">
+            <button type="submit" ng-disabled="form.$invalid">Submit</button>
+            <p ng-show="$ctrl.saved">Your information has been saved.</p>
+        </div>
+    </form>
+</div>

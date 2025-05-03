@@ -1,0 +1,16 @@
+<div class="container">
+    <div ng-if="$ctrl.user">
+      <h3>Your Info</h3>
+      <p><strong>Name: </strong>{{$ctrl.user.firstName}} {{$ctrl.user.lastName}}</p>
+      <p><strong>Email: </strong>{{$ctrl.user.email}}</p>
+      <p><strong>Phone: </strong>{{$ctrl.user.phone}}</p>
+      <h3>Favorite Dish</h3>
+      <menu-item menu-item="$ctrl.user.favoriteInfo" 
+            category-short-name="$ctrl.user.category">
+      </menu-item>
+    </div>
+      
+    <div ng-if="!$ctrl.user">
+      <p>Not Signed Up Yet. <a ui-sref="public.signup">Sign up Now!</a></p>
+    </div>
+</div>
